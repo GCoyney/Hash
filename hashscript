@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "Enter password"
+read passwordi
+hash="9b306ab04ef5e25f9fb89c998a6aedab  -"
+passwordh="$(echo -n $passwordi|md5sum)"
+if [[ "$hash" = "$passwordh" ]];
+then
+	echo "login complete"
+else
+	echo "password incorrect"
+fi
